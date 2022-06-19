@@ -95,21 +95,24 @@ a:hover {
 
 .measurement {
   color: gold;
-  display: block;
+  /* display: block; */
   margin-top: 20px;
 }
 
 .ingredient {
-  display: block;
+  /* display: block; */
 }
 
 .instructions {
-  text-align: right;
+  /* text-align: right; */
 }
 
 .instruction {
-  display: block;
   margin-top: 20px;
+}
+
+.bullet {
+  color: gold;
 }
 
 /* .intro {

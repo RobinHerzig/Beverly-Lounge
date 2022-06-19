@@ -11,17 +11,19 @@
 </head>
 <body>
     
-	<ul class="cards">
+	<ul class="cards ">
 		<% for (let i = 0; i < info.drinks.length; i++) { %>
-			<section class="card cardFront">
+			<section class="card cardFront flexContainerColumn">
 				<section class="section">
 					<h1><%= info.drinks[i].strDrink %></h1>
 				</section>
-				<section class="section">
-					<span>Catagory: <%= info.drinks[i].strCategory %></span>
-				</section>
-				<section class="section">
-					<span>Glass: <%= info.drinks[i].strGlass %></span>
+				<section class="flexContainerRow">
+					<section class="section">
+						<span>Catagory: <%= info.drinks[i].strCategory %></span>
+					</section>
+					<section class="section">
+						<span>Glass: <%= info.drinks[i].strGlass %></span>
+					</section>
 				</section>
 			</section>
 			
@@ -31,17 +33,24 @@
 					<ul>
 						<!-- for (let ii = 0; info.drinks[i]['strIngredient' + ii]; ii++) { -->
 						<% for (let ii = 0; ii < 10; ii++) { %>
-							<span class="measurement"><%= info.drinks[i]['strMeasure' + ii] %></span>
-							<span class="ingredient"><%= info.drinks[i]['strIngredient' + ii] %></span>
+							<li class="measurement">
+								<%= info.drinks[i]['strMeasure' + ii] %>
+							</li>
+							<li class="ingredient">
+								<%= info.drinks[i]['strIngredient' + ii] %>
+							</li>
 						<% } %>
 					</ul>
 				</section>
 				<section class="section instructions">
 					<h2>Instructions:</h2>
-					<ol type="I">
+					<ol>
 						<% let instructionsArray = info.drinks[i].strInstructions.split('.') %>
 						<% for (let i = 0; i < instructionsArray.length - 1; i++) { %>
-							<li class="instruction"> <%= instructionsArray[i] + '.' %></li>
+							<li class="instruction">
+								<span class="bullet"> <%= i + 1 + '.' %></span>
+								<%= instructionsArray[i] + '.' %>
+							</li>
 						<% } %>
 					</ol>
 				</section>

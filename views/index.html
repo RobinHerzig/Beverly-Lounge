@@ -12,10 +12,13 @@
 <body>
     <h1 class="neon">Tin Tap Parlor</h1>
     <section>
-         <form action="/queryDrinks" method="POST">
-                <input type="text" placeholder="Liquor" name="ingredient">
-                <input type="submit">
-            </form>
+        <form action="/queryDrinks" method="POST">
+            <input type="text" placeholder="Liquor" name="ingredient">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/queryFavorites" method="POST">
+            <input type="submit" value="Favorites">
+        </form>
     </section>
 
     <script src='js/main.js'></script>
