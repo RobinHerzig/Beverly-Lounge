@@ -1,9 +1,190 @@
-/* Box Model Hack */
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+/* * {
+  border: 1px solid rgb(27, 27, 27) !important;
+} */
+
+:root {
+  --acccent: rgb(255, 220, 107);
+  --neon: orange;
+  --background: rgb(15, 15, 15);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: rgb(41, 41, 41);
+  font-size: 1.6rem;
+  color: white;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 8rem;
+  font-family: 'Diplomata', cursive, 'Courier New', Courier, monospace;
+  word-spacing: 999px;
+  margin-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h1::first-letter {
+  margin-left: -25px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--acccent);
+  /* line-height: 3rem; */
+}
+
+p, span, li {
+  font-size: 1.6rem;
+  font-weight: 400;
+  /* line-height: 3rem; */
+}
+
+/* a {
+  color: inherit;
+  text-decoration: none;
+} */
+
+/* a:hover {
+  color: var(--acccent);
+} */
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.card {
+  position: relative;
+  background: var(--background);
+  max-width: 900px;
+  margin: 80px auto;
+  word-break: break-word;
+  border: solid 1px var(--acccent);
+}
+
+.card:before {
+  content: " ";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 8px;
+  bottom: 8px;
+  border: double 4px var(--acccent);
+  pointer-events: none;
+}
+
+.card:hover {
+  box-shadow: 0 0 0.4em hsl(0, 0%, 70%), 0 0 1em var(--neon), inset 0 0 0.2em hsl(0, 0%, 70%), inset 0 0 .5em var(--neon);
+}
+
+.cardFront, .cardBack {
+  margin: 20px;
+}
+
+.cardFront > h1 {
+  flex: 30;
+}
+
+.toolTip {
+  flex: 1;
+}
+
+.cardFront {
+  border-bottom: solid 1px var(--acccent);
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.cardBack {
+  margin-top: 15px;
+}
+
+.ingredients {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  flex: 2;
+}
+
+.instructions {
+  border-left: solid 1px var(--acccent);
+  border-right: solid 1px var(--acccent);
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  flex: 6;
+}
+
+.image {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  flex: 3;
+}
+
+.measurement, .instruction {
+  margin-top: 15px;
+}
+
+.measurement {
+  color: var(--acccent);
+}
+
+.bullet {
+  color: var(--acccent);
+  flex: 1;
+}
+
+.instructionText {
+  flex: 16;
+}
+
+/******************************************
+/* HOMEPAGE
+/*******************************************/
+
+.homepage {
+  text-align: center;
+  /* padding: 50px; */
+  min-height: 400px;
+  box-shadow: 0 0 0.4em hsl(0, 0%, 70%), 0 0 1em var(--neon), inset 0 0 0.2em hsl(0, 0%, 70%), inset 0 0 .5em var(--neon);
+}
+
+.homepage > h1 {
+  color: var(--acccent);
+  font-size: 8rem;
+  font-weight: 700;
+  word-spacing: normal;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 0;
+  font-family: 'Neonderthaw', cursive, 'Courier New', Courier, monospace;
+}
+
+form {
+  display: inline-block;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
 * {
   box-sizing: border-box;
 }
 
-/* Clear fix hack */
 .clearfix:after {
   content: ".";
   display: block;
@@ -17,53 +198,6 @@
 clear: both;
 }
 
-/******************************************
-/* BASE STYLES
-/*******************************************/
-
-* {
-  /* border: 1px solid rgb(27, 27, 27) !important; */
-}
-
-html {
-  font-size: 62.5%;
-}
-
-
-body {
-  background-color: rgb(95, 95, 95);
-  font-size: 1.6rem;
-  color: white;
-}
-
-h1 {
-  font-size: 6rem;
-  font-weight: 700;
-  line-height: 8rem;
-}
-
-h2, h3, h4, h5, h6 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 3.5rem;
-  color: gold;
-}
-
-p, span, li {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 2rem;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  color: gold;
-}
-
 .flexContainerColumn {
   display: flex;
   flex-direction: column;
@@ -74,103 +208,52 @@ a:hover {
   flex-direction: row;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-
-.card {
-  background: black;
-  max-width: 800px;
-  margin: 0 auto;
-  border: solid 1px gold;
+.toolTip {
+  font-size: 3.5rem;
+  color: var(--acccent);
+  position: relative;
+  cursor: pointer;
 }
 
-.cardFront {
-  margin: 50px auto 0 auto;
+.toolTipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--background);
+  border: 1px solid var(--acccent);
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  cursor: default;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: -30px;
+  left: -200%;
+  z-index: 1;
 }
 
-.section {
-  padding: 10px;
+.toolTip:hover .toolTipText {
+  visibility: visible;
 }
 
-.measurement {
-  color: gold;
-  /* display: block; */
-  margin-top: 20px;
+.neon:hover {
+  color: var(--neon);
+  text-shadow: 0 0 0.2em hsl(0, 0%, 70%), 0 0 0.5em var(--neon);
+  position: relative;
 }
 
-.ingredient {
-  /* display: block; */
+.neonReflect::before {
+  content: "";
+  position: absolute;
+  background: var(--neon);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-
-.instructions {
-  /* text-align: right; */
-}
-
-.instruction {
-  margin-top: 20px;
-}
-
-.bullet {
-  color: gold;
-}
-
-/* .intro {
-  max-width: 1000px;
-  padding: 400px 0;
-  color: darkred;
-  background-color: rgba(255, 255, 255, 0)
-}  */
-
-/* .backDrop {
-  padding: 0 calc(50vw - 500px);
-  margin: 0;
-  background-color: whitesmoke;
-  border: 1px solid lightgrey;
-  border-left: none;
-  border-right: none;
-} */
-
-/* header > .backDrop {
-  background-color: rgba(255, 255, 255, 0)
-} */
-
-/* .about, .ingredients, .products, .purchase {
-  border-bottom: 1px solid lightgrey;
-} */
-
-
-
-/* #imageLogo {
-  background-image: url(../images/peppers.jpg);
-}
-
-#imageSteve {
-  background-image: url(../images/steve.jpg);
-}
-
-#imagePeppers {
-  background-image: url(../images/peppers.jpg);
-}
-
-#imageLimes {
-  background-image: url(../images/limes.jpg);
-}
-
-#imageCharcoal {
-  background-image: url(../images/charcoal.jpg);
-} */
-
-/* .right {
-  text-align: right;
-} */
-
-/* .socialMedia {
-  justify-content: space-evenly;
-} */
 
 /******************************************
-/* ADDITIONAL STYLES
+/* MEDIA
 /*******************************************/
 
 /* @media only screen and (max-width: 1100px) {

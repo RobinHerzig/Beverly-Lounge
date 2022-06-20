@@ -18,12 +18,16 @@ app.post('/queryDrinks', (req, res) => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${queryParameter}`)
     .then(res => res.json())
     .then(data => {
-        res.render('results.ejs', { info: data })
+        if (data.drinks) {
+          res.render('results.ejs', { info: data })
+        }
+        else {
+          res.render('404.ejs')
+        }
     })
     .catch(error => {
         console.log(error)
     })
-
 })
 
 app.listen(process.env.PORT || PORT, () => {

@@ -5,55 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Diplomata&family=Neonderthaw&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 	<link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
-	<ul class="cards ">
+	<ul>
 		<% for (let i = 0; i < info.drinks.length; i++) { %>
-			<section class="card cardFront flexContainerColumn">
-				<section class="section">
-					<h1><%= info.drinks[i].strDrink %></h1>
-				</section>
-				<section class="flexContainerRow">
-					<section class="section">
-						<span>Catagory: <%= info.drinks[i].strCategory %></span>
+			<section class="card">
+				<header class="cardFront flexContainerRow">
+					<h1>
+						<%= info.drinks[i].strDrink %>
+					</h1>
+					<span class="fa-solid fa-bookmark toolTip">
+						<span class="toolTipText">Bookmark</span>
+					</span>
+				</header>
+				
+				<footer class="cardBack flexContainerRow">
+					<section class="ingredients">
+						<h2>Ingredients:</h2>
+						<ul>
+							<!-- for (let ii = 0; info.drinks[i]['strIngredient' + ii]; ii++) { -->
+							<% for (let ii = 1; ii < 10; ii++) { %>
+								<li class="measurement">
+									<%= info.drinks[i]['strMeasure' + ii] %>
+								</li>
+								<li class="ingredient">
+									<%= info.drinks[i]['strIngredient' + ii] %>
+								</li>
+							<% } %>
+						</ul>
 					</section>
-					<section class="section">
-						<span>Glass: <%= info.drinks[i].strGlass %></span>
+					<section class="instructions">
+						<h2>Instructions:</h2>
+						<ol>
+							<% let instructionsArray = info.drinks[i].strInstructions.split('.') %>
+							<% for (let i = 0; i < instructionsArray.length - 1; i++) { %>
+								<li class="instruction flexContainerRow">
+									<span class="bullet">
+										<%= i + 1 + '.' %>
+									</span>
+									<span class="instructionText">
+										<%= instructionsArray[i] + '.' %>
+									</span>
+								</li>
+							<% } %>
+						</ol>
 					</section>
-				</section>
-			</section>
-			
-			<section class="card cardBack flexContainerRow">
-				<section class="section ingredients">
-					<h2>Ingredients:</h2>
-					<ul>
-						<!-- for (let ii = 0; info.drinks[i]['strIngredient' + ii]; ii++) { -->
-						<% for (let ii = 0; ii < 10; ii++) { %>
-							<li class="measurement">
-								<%= info.drinks[i]['strMeasure' + ii] %>
-							</li>
-							<li class="ingredient">
-								<%= info.drinks[i]['strIngredient' + ii] %>
-							</li>
-						<% } %>
-					</ul>
-				</section>
-				<section class="section instructions">
-					<h2>Instructions:</h2>
-					<ol>
-						<% let instructionsArray = info.drinks[i].strInstructions.split('.') %>
-						<% for (let i = 0; i < instructionsArray.length - 1; i++) { %>
-							<li class="instruction">
-								<span class="bullet"> <%= i + 1 + '.' %></span>
-								<%= instructionsArray[i] + '.' %>
-							</li>
-						<% } %>
-					</ol>
-				</section>
+					<section class="image">
+						<h3>Glass:</h3>
+						<!-- <img src="" alt="">
+						info.drinks[i].strGlass -->
+					</section>
+				</footer>
 			</section>
 		<% } %>
 	</ul>
