@@ -7,9 +7,9 @@
 } */
 
 :root {
-  --acccent: rgb(255, 220, 107);
+  --accent: hsl(46, 69%, 57%);
   --background: rgb(15, 15, 15);
-  --neon: orange;
+  --neon: hsl(46, 92%, 64%);
   --white: hsla(0, 0%, 100%, 0.75);
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 6.4rem;
   font-weight: 700;
   line-height: 8rem;
   font-family: 'Diplomata', cursive, 'Courier New', Courier, monospace;
@@ -38,12 +38,13 @@ h1 {
 
 h1::first-letter {
   margin-left: -25px;
+  font-size: 7.3rem;
 }
 
 h2, h3, h4, h5, h6 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--acccent);
+  color: var(--accent);
   /* line-height: 3rem; */
 }
 
@@ -59,7 +60,7 @@ p, span, li {
 } */
 
 /* a:hover {
-  color: var(--acccent);
+  color: var(--accent);
 } */
 
 /******************************************
@@ -72,7 +73,7 @@ p, span, li {
   max-width: 900px;
   margin: 80px auto;
   word-break: break-word;
-  border: solid 1px var(--acccent);
+  border: solid 1px var(--accent);
 }
 
 .card:before {
@@ -82,7 +83,7 @@ p, span, li {
   right: 8px;
   top: 8px;
   bottom: 8px;
-  border: double 4px var(--acccent);
+  border: double 4px var(--accent);
   pointer-events: none;
 }
 
@@ -99,7 +100,7 @@ p, span, li {
 }
 
 .cardFront {
-  border-bottom: solid 1px var(--acccent);
+  border-bottom: solid 1px var(--accent);
   padding-left: 10px;
   padding-bottom: 10px;
   margin-bottom: 15px;
@@ -117,31 +118,36 @@ p, span, li {
 }
 
 .instructions {
-  border-left: solid 1px var(--acccent);
-  border-right: solid 1px var(--acccent);
+  border-left: solid 1px var(--accent);
+  border-right: solid 1px var(--accent);
   padding-left: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
   flex: 6;
 }
 
-.image {
+.glass {
   padding-left: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
   flex: 3;
+  text-align: center;
 }
 
-.measurement, .instruction {
+.glass h3 {
+  text-align: left;
+}
+
+.measurement, .instruction, .glassImage {
   margin-top: 15px;
 }
 
 .measurement {
-  color: var(--acccent);
+  color: var(--accent);
 }
 
 .bullet {
-  color: var(--acccent);
+  color: var(--accent);
   flex: 1;
 }
 
@@ -163,8 +169,8 @@ p, span, li {
   display: inline-block;
 }
 
-.homepage > h1 {
-  color: var(--acccent);
+#neonText {
+  color: var(--accent);
   font-size: 8rem;
   font-weight: 700;
   word-spacing: normal;
@@ -183,7 +189,7 @@ p, span, li {
   box-shadow: 0 0 0.4em var(--white), 0 0 1em var(--neon), inset 0 0 0.2em var(--white), inset 0 0 .5em var(--neon);
 }
 
-.neonReflect::before {
+#neonReflect {
   overflow-x: hidden;
   object-fit: contain;
   border: none;
@@ -232,8 +238,9 @@ clear: both;
 }
 
 .toolTip {
+  max-height: 35px;
   font-size: 3.5rem;
-  color: var(--acccent);
+  color: var(--accent);
   position: relative;
   cursor: pointer;
 }
@@ -242,17 +249,18 @@ clear: both;
   visibility: hidden;
   width: 120px;
   background-color: var(--background);
-  border: 1px solid var(--acccent);
+  border: 1px solid var(--accent);
   color: white;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
   cursor: default;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   position: absolute;
   top: -30px;
-  left: -200%;
+  left: -170%;
   z-index: 1;
+  /* user-select: none; */
 }
 
 .toolTip:hover .toolTipText {

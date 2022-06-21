@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-// const ejs = require('ejs')
 const PORT = 8000
 
 app.set('view engine', 'ejs')
@@ -10,6 +9,10 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
+})
+
+app.get('/queryFavorites', (req, res) => {
+  res.render('results.ejs')
 })
 
 app.post('/queryDrinks', (req, res) => {

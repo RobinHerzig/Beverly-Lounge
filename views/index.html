@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <section class="card homepage neon neonReflect">
+    <section class="card homepage neon">
         <h1 id="neonText">Golden Goblet Lounge</h1>
         <form action="/queryDrinks" method="POST">
-            <input type="text" placeholder="" name="ingredient" id="input">
-            <input type="submit" value="Search">
+            <input type="text" placeholder="Enter your cocktail" name="ingredient" id="input">
+            <input type="submit" value="Search" id="search">
         </form>
-        <form action="/queryFavorites" method="POST">
-            <input type="submit" value="Favorites">
+        <form action="/queryFavorites" method="GET">
+            <input type="submit" value="Favorites" id="favorites">
         </form>
-        <!-- <section class="neonReflect"></section> -->
+        <section id="neonReflect"></section>
     </section>
 
 

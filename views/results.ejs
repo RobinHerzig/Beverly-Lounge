@@ -15,36 +15,48 @@
 <body>
     
 	<ul>
+		<!-- Iterate through every drink object inside info.drinks -->
 		<% for (let i = 0; i < info.drinks.length; i++) { %>
 			<section class="card">
 				<header class="cardFront flexContainerRow">
 					<h1>
-						<%= info.drinks[i].strDrink %>
+						<%= info.drinks[i].strDrink.toUpperCase() %>
 					</h1>
-					<span class="fa-solid fa-bookmark toolTip">
-						<span class="toolTipText">Bookmark</span>
-					</span>
+						<span class="fa-solid fa-bookmark toolTip" id="<%= info.drinks[i].idDrink %>">
+							<span class="toolTipText">Bookmark</span>
+						</span>
 				</header>
 				
 				<footer class="cardBack flexContainerRow">
 					<section class="ingredients">
 						<h2>Ingredients:</h2>
 						<ul>
-							<!-- for (let ii = 0; info.drinks[i]['strIngredient' + ii]; ii++) { -->
-							<% for (let ii = 1; ii < 10; ii++) { %>
+							<!-- Embed strMeasure and strIngredient while either value is truthy -->
+							<% let ii = 1 %>
+							<% while (info.drinks[i]['strMeasure' + ii] || info.drinks[i]['strIngredient' + ii]) { %>
 								<li class="measurement">
 									<%= info.drinks[i]['strMeasure' + ii] %>
 								</li>
 								<li class="ingredient">
 									<%= info.drinks[i]['strIngredient' + ii] %>
 								</li>
+								<% ii += 1 %>
 							<% } %>
 						</ul>
 					</section>
 					<section class="instructions">
 						<h2>Instructions:</h2>
 						<ol>
-							<% let instructionsArray = info.drinks[i].strInstructions.split('.') %>
+							<!-- Replace missing period '.' at end of strInstructions that omitted them in error -->
+							<% let strInstructions = info.drinks[i].strInstructions %>
+							<% if (strInstructions[strInstructions.length - 1] != '.') { %>
+								<% strInstructions = strInstructions + '.' %>
+							<% } %>
+							<!-- Add a space ' ' at the end of strInstructions to ensure the split('. ') works correctly all objects -->
+							<% strInstructions = strInstructions + ' ' %>
+							<!-- Split strInstructions into an array  -->
+							<% const instructionsArray = strInstructions.split('. ') %>
+							<!-- Embed each element into the HTML  -->
 							<% for (let i = 0; i < instructionsArray.length - 1; i++) { %>
 								<li class="instruction flexContainerRow">
 									<span class="bullet">
@@ -57,17 +69,20 @@
 							<% } %>
 						</ol>
 					</section>
-					<section class="image">
+					<section class="glass">
 						<h3>Glass:</h3>
-						<!-- <img src="" alt="">
-						info.drinks[i].strGlass -->
+						<!-- Create strGlass variable to be implemented into template literal -->
+						<% const glassType = info.drinks[i].strGlass.toLowerCase().split(' ').join('') %>
+						<!-- <img src="<%= `images/${glassType}.png` %>" alt="<%= `${info.drinks[i].strGlass} clipart` %>" class="glassImage" onerror="this.onerror=null; this.src='images/default.png'"> -->
+						<img src="<%= `images/${glassType}.png` %>" alt="<%= `${info.drinks[i].strGlass} clipart` %>" class="glassImage">
+						<span>
+							<%= info.drinks[i].strGlass %>
+						</span>
 					</section>
 				</footer>
 			</section>
 		<% } %>
 	</ul>
-
-
 
     <script src='js/main.js'></script>
 </body>
