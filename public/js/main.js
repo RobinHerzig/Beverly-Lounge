@@ -3,6 +3,7 @@ const search = document.querySelector('#search')
 const favorites = document.querySelector('#favorites')
 const glassImages = document.querySelectorAll('.glassImage')
 const bookmark = document.querySelectorAll('.toolTip')
+const cards = document.querySelectorAll('.card')
 
 if (input) {
     input.addEventListener('focusin', lightUpInput)
@@ -44,23 +45,30 @@ function replaceImage(event) {
 }
 
 function bookmarkCard(event) {
-    console.log('Bookmark clicked')
     const id = this.id
-    if (Storage.includes(id) == false) {
-        localStorage.setItem(id, id)
+    if (localStorage.hasOwnProperty(id)) {
+        localStorage.removeItem(id)
+        this.parentNode.parentNode.classList.remove('neon')
+        this.style.color = 'var(--accent)'
+        console.log('Bookmark removed')
     }
-    console.log(localStorage.getItem('ID'))
-    const sName = this.parentNode.parentNode.classList.toggle('neon')
-    // document.querySelector('.card').classList.toggle('neon')
-
-    // Array.from(unbookmarkCard).element[0].classList.remove('hidden')
-    // const id = info.drinks[i].idDrink
-    // console.log(id)
+    else {
+        localStorage.setItem(id, id)
+        this.parentNode.parentNode.classList.add('neon')
+        this.style.color = 'var(--neon)'
+        console.log('Bookmark added')
+    }
+    
 }
 
-// onload.checkBookmarks()
+checkBookmarks()
 
-// function checkBookmarks() {
-//     if ()
-// }
-
+function checkBookmarks() {
+    const cardArray = Array.from(cards)
+    cardArray.forEach(card => {
+        if (localStorage.hasOwnProperty(card.childNodes[1].childNodes[3].id) == true) {
+            console.log('Match found!')
+            card.classList.add('neon')
+        }
+    })
+}
