@@ -11,10 +11,6 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 })
 
-app.get('/queryFavorites', (req, res) => {
-  res.render('results.ejs')
-})
-
 app.post('/queryDrinks', (req, res) => {
     const queryParameter = req.body.ingredient.toLowerCase()
 
@@ -31,6 +27,22 @@ app.post('/queryDrinks', (req, res) => {
     .catch(error => {
         console.log(error)
     })
+})
+
+app.get('/queryRandom', (req, res) => {
+  fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+  .then(res => res.json())
+  .then(data => {
+      if (data.drinks) {
+        res.render('results.ejs', { info: data })
+      }
+      else {
+        res.render('404.ejs')
+      }
+  })
+  .catch(error => {
+      console.log(error)
+  })
 })
 
 app.listen(process.env.PORT || PORT, () => {

@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Diplomata&family=Neonderthaw&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Diplomata&family=Neonderthaw&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 	<link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,19 +16,22 @@
     <section class="card homepage neon">
         <h1 id="neonText">Golden Goblet Lounge</h1>
         <form action="/queryDrinks" method="POST">
-            <input type="text" placeholder="Enter your cocktail" name="ingredient" id="input">
-            <input type="submit" value="Search" id="search">
+            <input type="text" placeholder="Enter your cocktail" name="ingredient" class="homepageInput">
+            <input type="submit" value="Search" class="homepageInput">
         </form>
-        <form action="/queryFavorites" method="GET">
-            <input type="submit" value="Favorites" id="favorites">
+        <!-- <form action="/queryFavorites" method="GET">
+            <input type="submit" value="Favorites" class="homepageInput">
+        </form> -->
+        <form action="/queryRandom" method="GET">
+            <input type="submit" value="Random" class="homepageInput">
         </form>
         <section id="neonReflect"></section>
     </section>
-
-
-        
-
-
+    <footer class="credit flexContainerRow">
+        <span>Developed by <a href="#">Robin Herzig</a></span>
+        <span><a href="#">Github</a></span>
+        <span>Images by <a href="#">Nowell Herzig</a></span>
+    </footer>
     <script src='js/main.js'></script>
 </body>
 </html>
