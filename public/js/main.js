@@ -1,23 +1,7 @@
-// const input = document.querySelector('#input')
-// const search = document.querySelector('#search')
-// const favorites = document.querySelector('#favorites')
 const homepageInput = document.querySelectorAll('.homepageInput')
 const glassImages = document.querySelectorAll('.glassImage')
 const bookmark = document.querySelectorAll('.toolTip')
 const cards = document.querySelectorAll('.card')
-
-// if (input) {
-//     input.addEventListener('focusin', lightUpInput)
-//     input.addEventListener('focusout', turnOffInput)
-// }
-// if (search) {
-//     search.addEventListener('focusin', lightUpInput)
-//     search.addEventListener('focusout', turnOffInput)
-// }
-// if (favorites) {
-//     favorites.addEventListener('focusin', lightUpInput)
-//     favorites.addEventListener('focusout', turnOffInput)
-// }
 
 Array.from(homepageInput).forEach((element)=>{
     element.addEventListener('focusin', lightUpInput)
@@ -33,7 +17,6 @@ Array.from(glassImages).forEach((element)=>{
 Array.from(bookmark).forEach((element)=>{
     element.addEventListener('click', bookmarkCard)
 })
-
 
 // Turn on and off lights on homepage
 function lightUpInput() {
@@ -76,7 +59,7 @@ checkBookmarks()
 function checkBookmarks() {
     const cardArray = Array.from(cards)
     cardArray.forEach(card => {
-        if (localStorage.hasOwnProperty(card.childNodes[1].childNodes[3].id) == true) {
+        if (localStorage.hasOwnProperty(card.childNodes[1].childNodes[3]?.id) == true) {
             card.classList.add('neon')
         }
     })
