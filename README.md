@@ -26,13 +26,13 @@
 <!--     <img src="https://img.shields.io/static/v1?label=|&message=FIREBASE&color=cbb148&style=plastic&logo=firebase"/> -->
 </p>
 
-https://www.#.com
+https://golden-goblet-lounge.herokuapp.com/
 
 Find your next favorite cocktail using our latest search engine! Golden Goblet Lounge is a straightforward full-stack platform to search for recipes and track your favorites.
 
 ## How It's Made:
 
-When the user enters the name or ingredient of a cocktail, our website sends a POST request to our server containing the name of their drink. Our server then parses the query parameter and uses the fetch method to send that information to a professional cocktail database. This database returns any matches, which are then converted to JSON and embedded in our EJS template.
+When the user enters the name or ingredient of a cocktail, our website sends a POST request to our server containing the name of their drink. Our server then parses the query parameter and uses the fetch method (via the node-fetch module) to send that information to a professional cocktail database. This database returns any matches, which are then converted to JSON and embedded in our EJS template.
 
 https://www.thecocktaildb.com/api.php
 
