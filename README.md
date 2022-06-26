@@ -32,7 +32,7 @@ Find your next favorite cocktail using our latest search engine! Golden Goblet L
 
 ## How It's Made:
 
-When the user enters in the name or ingredient of a cocktail, our website sends a POST request to our server containing the name of their drink. Our server then parses the query parameter and uses the fetch method to send that information to a professional cocktail database. This database returns any matches, which are then converted to JSON and embedded in our EJS template.
+When the user enters the name or ingredient of a cocktail, our website sends a POST request to our server containing the name of their drink. Our server then parses the query parameter and uses the fetch method to send that information to a professional cocktail database. This database returns any matches, which are then converted to JSON and embedded in our EJS template.
 
 https://www.thecocktaildb.com/api.php
 
