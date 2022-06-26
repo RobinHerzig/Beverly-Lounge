@@ -21,10 +21,20 @@ html {
 }
 
 body {
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(29, 29, 29);
   font-size: 1.6rem;
   color: white;
   padding-top: 5vw;
+}
+
+/* .index {
+  background: url(../images/diagmonds.webp) repeat;
+  background-size: 200px;
+} */
+
+.results {
+  background: url(../images/diagmonds.webp) repeat;
+  background-size: 200px;
 }
 
 h1 {
@@ -336,7 +346,7 @@ clear: both;
   }
 
   .credit {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
   }
 
@@ -359,8 +369,8 @@ clear: both;
 @media only screen and (max-width: 512px) {
 
   h1 {
-    font-size: 2.5rem;
-    line-height: 5rem;
+    font-size: 2rem;
+    line-height: 4rem;
   }
 
   #neonText {
