@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Golden Goblet Lounge</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Diplomata&family=Neonderthaw&display=swap" rel="stylesheet">
@@ -71,13 +71,15 @@
 					</section>
 					<section class="glass">
 						<h3>Glass:</h3>
-						<!-- Create strGlass variable to be implemented into template literal -->
-						<% const glassType = info.drinks[i].strGlass.toLowerCase().split(' ').join('') %>
-						<!-- <img src="<%= `images/${glassType}.png` %>" alt="<%= `${info.drinks[i].strGlass} clipart` %>" class="glassImage" onerror="this.onerror=null; this.src='images/default.png'"> -->
-						<img src="<%= `images/${glassType}.png` %>" alt="<%= `${info.drinks[i].strGlass} clipart` %>" class="glassImage">
-						<span>
-							<%= info.drinks[i].strGlass %>
-						</span>
+						<section class="flexContainerColumn">
+							<!-- Create strGlass variable to be implemented into template literal -->
+							<% const glassType = info.drinks[i].strGlass.toLowerCase().split(' ').join('') %>
+							<!-- <img src="<%= `images/${glassType}.png` %>" alt="<%= `${info.drinks[i].strGlass} clipart` %>" class="glassImage" onerror="this.onerror=null; this.src='images/default.png'"> -->
+							<img src="<%= `images/${glassType}.png` %>" alt="<%= `${info.drinks[i].strGlass} clipart` %>" class="glassImage">
+							<span>
+								<%= info.drinks[i].strGlass %>
+							</span>
+						</section>
 					</section>
 				</footer>
 			</section>
