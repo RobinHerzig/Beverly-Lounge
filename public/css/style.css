@@ -24,11 +24,11 @@ body {
   background-color: rgb(41, 41, 41);
   font-size: 1.6rem;
   color: white;
-  padding-top: 100px;
+  padding-top: 5vw;
 }
 
 h1 {
-  font-size: 5.5rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 8rem;
   font-family: 'Diplomata', cursive, 'Courier New', Courier, monospace;
@@ -54,6 +54,7 @@ p, span, li {
 a {
   color: inherit;
   text-decoration: none;
+  font-weight: 700;
 }
 
 a:hover {
@@ -67,7 +68,8 @@ a:hover {
 .card {
   position: relative;
   background: var(--background);
-  max-width: 900px;
+  width: 80vw;
+  max-width: 1200px;
   margin: 80px auto;
   word-break: break-word;
   border: solid 1px var(--accent);
@@ -94,7 +96,7 @@ a:hover {
 
 .cardFront > h1::first-letter {
   margin-left: -25px;
-  font-size: 7.3rem;
+  font-size: calc(1em + 20%);
 }
 
 .toolTip {
@@ -112,28 +114,25 @@ a:hover {
   margin-top: 15px;
 }
 
-.ingredients {
+.ingredients, .instructions, .glass {
   padding-left: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
+}
+
+.ingredients {
   flex: 2;
 }
 
 .instructions {
   border-left: solid 1px var(--accent);
   border-right: solid 1px var(--accent);
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
   flex: 6;
 }
 
 .glass {
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  flex: 3;
   text-align: center;
+  flex: 3;
 }
 
 .glass h3 {
@@ -141,7 +140,13 @@ a:hover {
 }
 
 .glass img {
-  max-width: 180px;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.glass span {
+  margin-top: 15px;
 }
 
 .measurement, .instruction, .glassImage {
@@ -154,7 +159,8 @@ a:hover {
 
 .bullet {
   color: var(--accent);
-  flex: 1;
+  flex: none;
+  padding-right: 10px;
 }
 
 .instructionText {
@@ -168,11 +174,9 @@ a:hover {
 .homepage {
   text-align: center;
   min-height: 400px;
+  padding: 20px;
+  padding-bottom: 40px;
   position: relative;
-}
-
-.homepage > form {
-  display: inline-block;
 }
 
 #neonText {
@@ -180,6 +184,7 @@ a:hover {
   font-size: 8rem;
   font-weight: 700;
   word-spacing: normal;
+  margin: 0;
   margin-top: 100px;
   margin-bottom: 100px;
   padding: 0;
@@ -208,32 +213,26 @@ a:hover {
 }
 
 .credit {
-  position: absolute;
-  width: 100vw;
-  bottom: 10px;
+  /* position: absolute; */
+  /* width: 100vw; */
+  /* top: 10px; */
   justify-content: space-between;
+  position: relative;
+  top: -4vw;
 }
 
 .credit span {
-  margin: 0 50px;
+  margin: 0 20px;
 }
 
 /******************************************
 /* 404
 /*******************************************/
 
-.error {
-  min-height: 400px;
-  position: relative;
-}
-
 .error p {
-  position: absolute;
-  top: 35%;
-  left: 5%;
+  margin-top: 10%;
   font-size: 3rem;
   text-align: center;
-  margin-top:-15;
 }
 
 /******************************************
@@ -301,25 +300,107 @@ clear: both;
 /* MEDIA
 /*******************************************/
 
-/* @media only screen and (max-width: 1100px) {
-  .flexContainerRow {
-       flex-direction: column;
-       align-items: center;
+@media only screen and (max-width: 1024px) {
+
+  h1 {
+    font-size: 3rem;
+    line-height: 6rem;
   }
 
-  .reverse {
-       flex-direction: column-reverse;
+  #neonText {
+    font-size: 6rem;
   }
 
-  .flexContainerColumn {
-       text-align: center;
+  .cardBack {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
-  h2, h3, h4, h5, h6 {
-       padding: 30px;
+  .ingredients {
+    order: 1;
+    border-right: 1px solid var(--accent);
+    flex: 3;
   }
-  
-  span {
-       font-size: 1.4rem
+
+  .glass {
+    order: 2;
+    flex: 2;
   }
-} */
+
+  .instructions {
+    flex: 1 1 100%;
+    order: 3;
+    border: none;
+    border-top: 1px solid var(--accent);
+    padding-top: 10px;
+  }
+
+  .credit {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .credit span {
+    order: 2;
+    padding-bottom: 10px;
+  }
+
+  .credit span + span {
+    order: 1;
+    padding-bottom: 10px;
+  }
+
+  .credit span + span + span {
+    order: 3;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 5rem;
+  }
+
+  #neonText {
+    font-size: 5rem;
+  }
+
+  .cardBack {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .ingredients {
+    order: 2;
+    /* flex: 2; */
+    border: none;
+    border-bottom: 1px solid var(--accent);
+    padding-top: 10px;
+  }
+
+  .glass {
+    order: 1;
+    /* flex: 2; */
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .instructions {
+    order: 3;
+    /* flex: 1; */
+    border: none;
+  }
+
+  .glass img {
+    max-width: 35%;
+  }
+
+  .toolTip {
+    font-size: 3rem;
+  }
+
+  .credit span {
+    font-size: 1.4rem;
+  }
+}
