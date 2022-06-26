@@ -1,7 +1,10 @@
 const express = require('express')
 const https = require('https')
+const fetch = require('node-fetch')
 const app = express()
 const PORT = 8000
+
+
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -15,7 +18,7 @@ app.get('/', (req, res) => {
 app.post('/queryDrinks', (req, res) => {
     const queryParameter = req.body.ingredient.toLowerCase()
 
-    https.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${queryParameter}`)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${queryParameter}`)
     .then(res => res.json())
     .then(data => {
         if (data.drinks) {
@@ -31,7 +34,7 @@ app.post('/queryDrinks', (req, res) => {
 })
 
 app.get('/queryRandom', (req, res) => {
-  https.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+  fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
   .then(res => res.json())
   .then(data => {
       if (data.drinks) {

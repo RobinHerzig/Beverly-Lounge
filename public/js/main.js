@@ -64,3 +64,28 @@ function checkBookmarks() {
         }
     })
 }
+
+// const inputText = document.querySelector('#inputText')
+
+// const inputSubmitQuery = document.querySelector('#inputSubmitQuery')
+// inputSubmitQuery.addEventListener('click', inputSearch)
+
+// const inputSubmitRandom = document.querySelector('#inputSubmitRandom')
+
+// async function inputSearch() {
+//     const queryParameter = inputText.value.toLowerCase()
+
+//     try {
+//         const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${queryParameter}`)
+//         const data = await response.json()
+//         const data2 = await fetch('deleteRapper', {
+//             method: 'delete',
+//             headers: {'Content-Type': 'application/json'}
+//             })
+//           })
+        
+//     }
+//     catch(error) {
+//         console.log(error)
+//     }
+// }
