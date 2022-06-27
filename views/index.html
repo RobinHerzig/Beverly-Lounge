@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Goblet Lounge</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Diplomata&family=Neonderthaw&display=swap" rel="stylesheet">
@@ -14,26 +14,20 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="index">
-    <header class="credit flexContainerRow">
-        <span>Developed by <a href="https://robinherzig.netlify.app/">Robin Herzig</a></span>
+    <header class="credit">
         <span><a href="https://github.com/RobinHerzig/Golden-Goblet-Lounge">Github</a></span>
-        <span>Images by <a href="#">Nowell Herzig</a></span>
     </header>
     
     <section class="card homepage neon">
         <h1 id="neonText">Golden Goblet Lounge</h1>
         
-        <form action="/queryDrinks" method="POST">
-            <input type="text" placeholder="Enter your cocktail" name="ingredient" class="homepageInput" id="inputText">
+        <form action="/queryDrinks" method="POST" class="flexContainerRow">
+            <input autofocus type="text" placeholder="Cocktail" name="ingredient" class="homepageInput" id="inputText">
             <input type="submit" value="Search" class="homepageInput" id="inputSubmitQuery">
-        </form>
-        <form action="/queryRandom" method="GET">
-            <input type="submit" value="Random" class="homepageInput" id="inputSubmitRandom">
+            <input type="submit" value="Random" class="homepageInput" id="inputSubmitRandom" formaction="/queryRandom" formmethod="GET">
+            <!-- <input type="submit" value="Favorites" class="homepageInput" id="inputSubmitFavorites" formaction="/queryFavorites" formmethod="GET"> -->
         </form>
 
-        <!-- <form action="/queryFavorites" method="GET">
-            <input type="submit" value="Favorites" class="homepageInput">
-        </form> -->
         <section id="neonReflect"></section>
     </section>
     <script src='js/main.js'></script>
