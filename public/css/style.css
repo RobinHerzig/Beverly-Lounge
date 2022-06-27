@@ -7,9 +7,9 @@
 } */
 
 :root {
-  --accent: hsl(54, 37%, 53%);
-  --backgroundCard: rgb(17, 17, 17);
-  --background: rgb(29, 29, 29);
+  --accent: hsl(55, 40%, 51%);
+  --backgroundCard: rgb(25, 26, 29);
+  --background: rgb(35, 35, 35);
   --neon: hsl(54, 80%, 71%);
   --white: hsla(0, 0%, 100%, 0.75);
   --boxShadowNeon: 0 0 0.4em var(--white), 0 0 1em var(--neon), inset 0 0 0.2em var(--white), inset 0 0 .5em var(--neon);
@@ -24,7 +24,7 @@ html {
 body {
   background-color: var(--background);
   font-size: 1.6rem;
-  color: white;
+  color: rgb(212, 212, 212);
   padding-top: 5vw;
 }
 
@@ -34,6 +34,7 @@ body {
 }
 
 h1 {
+  
   font-size: 4rem;
   font-weight: 700;
   line-height: 8rem;
@@ -77,7 +78,7 @@ a:hover {
   width: 80vw;
   max-width: 1200px;
   margin: 80px auto;
-  word-break: break-word;
+  overflow-wrap: break-word;
   border: solid 1px var(--accent);
 }
 
@@ -98,6 +99,7 @@ a:hover {
 
 .cardFront > h1 {
   flex: 30;
+  margin-left: 40px;
 }
 
 .cardFront > h1::first-letter {
@@ -149,6 +151,7 @@ a:hover {
   max-width: 50%;
   margin-left: auto;
   margin-right: auto;
+  filter:brightness(.80);
 }
 
 .glass span {
@@ -196,7 +199,7 @@ a:hover {
   background-color: var(--backgroundCard);
   color: var(--accent);
   border: 1px solid var(--accent);
-  padding: .1em;
+  padding: .5em;
   flex: 1;
 }
 
@@ -205,6 +208,7 @@ a:hover {
   max-width: 100%;
   background-color: var(--background);
   margin-bottom: .2em;
+  color: white;
 }
 
 .homepage #inputSubmitQuery {
@@ -236,7 +240,6 @@ a:hover {
 }
 
 #neonReflect {
-  overflow-x: hidden;
   object-fit: contain;
   border: none;
   content: "";
@@ -262,7 +265,7 @@ a:hover {
 /*******************************************/
 
 .error p {
-  margin-top: 10%;
+  margin: 10% 0;
   font-size: 3rem;
   text-align: center;
 }
@@ -334,13 +337,18 @@ clear: both;
 
 @media only screen and (max-width: 1024px) {
 
-  h1 {
+  .cardFront > h1 {
     font-size: 2.5rem;
-    line-height: 6rem;
+    line-height: 5rem;
+    margin-left: 25px;
   }
 
   #neonText {
     font-size: 6rem;
+  }
+
+  #neonReflect {
+    display: none;
   }
 
   .cardBack {
@@ -368,20 +376,16 @@ clear: both;
   }
 }
 
-@media only screen and (max-width: 512px) {
+@media only screen and (max-width: 600px) {
 
-  h1 {
-    font-size: 1.6rem;
-    width: 100%;
+  .cardFront > h1 {
+    font-size: 1.5rem;
+    line-height: 3rem;
     margin-left: .1em;
   }
 
   #neonText {
     font-size: 5rem;
-  }
-
-  #neonReflect {
-    visibility: hidden;
   }
 
   .cardBack {
