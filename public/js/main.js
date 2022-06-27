@@ -44,6 +44,7 @@ function bookmarkCard(event) {
         localStorage.removeItem(id)
         this.parentNode.parentNode.classList.remove('neon')
         this.style.color = 'var(--accent)'
+        this.childNodes[1].style.display = 'none'
     }
     else {
         localStorage.setItem(id, id)
@@ -61,6 +62,7 @@ function checkBookmarks() {
     cardArray.forEach(card => {
         if (localStorage.hasOwnProperty(card.childNodes[1].childNodes[3]?.id) == true) {
             card.classList.add('neon')
+            card.childNodes[1].childNodes[3].style.color = 'var(--neon)'
         }
     })
 }
