@@ -7,10 +7,10 @@
 } */
 
 :root {
-  --accent: hsl(46, 48%, 49%);
+  --accent: hsl(54, 37%, 53%);
   --backgroundCard: rgb(17, 17, 17);
   --background: rgb(29, 29, 29);
-  --neon: hsl(54, 71%, 60%);
+  --neon: hsl(54, 80%, 71%);
   --white: hsla(0, 0%, 100%, 0.75);
   --boxShadowNeon: 0 0 0.4em var(--white), 0 0 1em var(--neon), inset 0 0 0.2em var(--white), inset 0 0 .5em var(--neon);
 }
@@ -58,13 +58,13 @@ p, span, li, input {
 }
 
 a {
-  color: inherit;
+  color: var(--accent);
   text-decoration: none;
   font-weight: 700;
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--neon);
 }
 
 /******************************************
@@ -253,10 +253,9 @@ a:hover {
 }
 
 .credit {
-  position: relative;
-  top: -50px;
-  padding-bottom: 10px;
-  text-align: center;
+  position: absolute;
+  top: 15px;
+  left: calc(50vw - 30px);
 }
 
 /******************************************
@@ -341,10 +340,6 @@ clear: both;
     line-height: 6rem;
   }
 
-  .credit {
-    top: -15px;
-  }
-
   #neonText {
     font-size: 6rem;
   }
@@ -380,10 +375,6 @@ clear: both;
     font-size: 1.6rem;
     width: 100%;
     margin-left: .1em;
-  }
-
-  .credit {
-    top: 0;
   }
 
   #neonText {
@@ -425,9 +416,5 @@ clear: both;
 
   .toolTip {
     font-size: 3rem;
-  }
-
-  .credit span {
-    font-size: 1.4rem;
   }
 }
