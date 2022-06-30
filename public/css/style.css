@@ -213,10 +213,12 @@ a:hover {
 
 .homepage #inputSubmitQuery {
   margin-right: .1em;
+  cursor: pointer;
 }
 
 .homepage #inputSubmitRandom {
   margin-left: .1em;
+  cursor: pointer;
 }
 
 .homepage #inputSubmitRandom:hover, .homepage #inputSubmitQuery:hover {
@@ -254,7 +256,7 @@ a:hover {
   opacity: .5;
 }
 
-.credit {
+.credit, .homepageButton {
   position: absolute;
   top: 15px;
   left: calc(50vw - 30px);
