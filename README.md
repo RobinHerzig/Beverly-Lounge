@@ -1,4 +1,4 @@
-# Golden Goblet Lounge
+# Beverly Lounge
 
 <p align="center">
     <img src="https://img.shields.io/static/v1?label=|&message=HTML5&color=a33550&style=plastic&logo=html5"/>
@@ -26,9 +26,9 @@
 <!--     <img src="https://img.shields.io/static/v1?label=|&message=FIREBASE&color=cbb148&style=plastic&logo=firebase"/> -->
 </p>
 
-https://golden-goblet-lounge.herokuapp.com/
+<!-- https://golden-goblet-lounge.herokuapp.com/ -->
 
-Find your next favorite cocktail using our latest search engine! Golden Goblet Lounge is a straightforward full-stack platform to search for recipes and track your favorites.
+Find your next favorite cocktail using our latest search engine! Beverly Lounge is a straightforward full-stack platform to search for recipes and track your favorites.
 
 ## How It's Made:
 
@@ -42,7 +42,7 @@ Our site also features a "random" button, allowing the user to retrieve a random
 
 ## Optimizations:
 
-Golden Goblet Lounge has been tested for edge cases and refined. Several errors were discovered in the cocktail database, which impacted certain results negatively. We are unable to fix these at the source, so, where possible, we fixed them using EJS. The typical workflow for that involved splitting the strings into an array and correcting spacing or adding missing punctuation. As a result of our hard work, Golden Goblet Lounge is currently a fully functional search engine.
+Beverly Lounge has been tested for edge cases and refined. Several errors were discovered in the cocktail database, which impacted certain results negatively. We are unable to fix these at the source, so, where possible, we fixed them using EJS. The typical workflow for that involved splitting the strings into an array and correcting spacing or adding missing punctuation. As a result of our hard work, Beverly Lounge is currently a fully functional search engine.
 
 Future iterations will see the bookmark feature expanded. For example, the user will be able to click a "favorites" button to show a complete list of all their bookmarks. Keeping all their favorites in an easy-to-access location will improve the functionality of our website.
 
