@@ -26,7 +26,7 @@
 <!--     <img src="https://img.shields.io/static/v1?label=|&message=FIREBASE&color=cbb148&style=plastic&logo=firebase"/> -->
 </p>
 
-<!-- https://golden-goblet-lounge.herokuapp.com/ -->
+https://beverlylounge.onrender.com/
 
 Find your next favorite cocktail using our latest search engine! Beverly Lounge is a straightforward full-stack platform to search for recipes and track your favorites.
 
