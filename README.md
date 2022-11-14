@@ -26,32 +26,38 @@
 <!--     <img src="https://img.shields.io/static/v1?label=|&message=FIREBASE&color=cbb148&style=plastic&logo=firebase"/> -->
 </p>
 
-https://beverlylounge.onrender.com/
+<p align="center">
+    <a target="_blank" href="https://beverlylounge.onrender.com/"><img width="25%" src="https://github.com/RobinHerzig/RobinHerzig/blob/main/images/goldengobletlounge.jpg"></a>
+    <br>
+    <a align="center" target="_blank" href="https://beverlylounge.onrender.com/">Beverly Lounge</a>
+</p>
 
-Find your next favorite cocktail using our latest search engine! Beverly Lounge is a straightforward full-stack platform to search for recipes and track your favorites.
+Find your next favorite cocktail using my latest search engine! Beverly Lounge is a straightforward full-stack platform to search for recipes and track your favorites.
 
 ## How It's Made:
 
-When the user enters the name or ingredient of a cocktail, our website sends a POST request to our server containing the name of their drink. Our server then parses the query parameter and uses the fetch method (via the node-fetch module) to send that information to a professional cocktail database. This database returns any matches, which are then converted to JSON and embedded in our EJS template.
+Drink information is provided by: https://www.thecocktaildb.com/api.php
 
-https://www.thecocktaildb.com/api.php
+When the server receives the client's search request, it fetches the drink information from the source above. Using EJS, that data is parsed and rendered to the page server-side.
 
-Each recipe "card" is built dynamically with the information received, and designed using flexbox. They contain a bookmark icon, which saves the ID of the drink in the browser's localStorage. Cards that are bookmarked will appear brighter than the others, even after the user reloads the page.
+The layout of each card was built using flexbox, and media queries were used to change the design at different device widths.
 
-Our site also features a "random" button, allowing the user to retrieve a random cocktail recipe from the database.
+The bookmark icons save drink ID to localStorage. Cards that are bookmarked will appear brighter than the others, even after the user reloads the page.
 
 ## Optimizations:
 
-Beverly Lounge has been tested for edge cases and refined. Several errors were discovered in the cocktail database, which impacted certain results negatively. We are unable to fix these at the source, so, where possible, we fixed them using EJS. The typical workflow for that involved splitting the strings into an array and correcting spacing or adding missing punctuation. As a result of our hard work, Beverly Lounge is currently a fully functional search engine.
+Several errors were discovered in the cocktail database. Since I'm unable to fix these at the source, fixed them within EJS. The typical workflow for this involved splitting the strings into an array and correcting spacing or adding missing punctuation. While this fixed the majority of the issues, edge cases may still exist.
 
-Future iterations will see the bookmark feature expanded. For example, the user will be able to click a "favorites" button to show a complete list of all their bookmarks. Keeping all their favorites in an easy-to-access location will improve the functionality of our website.
+Future iterations will include membership signups and connection to a MongoDB database. This will allow for two new featurs:
+1. User's can add new drinks.
+2. User's can save drinks and access them later.
 
-## Lessons Learned:
+## Installation:
 
-We learned a lot completing this website, which included both front-end and backend programming. It was extremely beneficial to write the code for both sides, as it helped us understand the client/server connection so much better.
+1. Download or clone the repo onto your local machine.
+2. In your terminal, enter `npm install` to download and install the dependencies.
+3. In the terminal, enter `npm start` to run the local server. Access it via `http://localhost:8000/`.
 
-In addition, EJS was a joy to work with, and we'll definitely be using it again in the near future. It saved us so much time by allowing us to create a template for each drink object without resorting to JavaScript for creating elements or duplicating nodes.
+## Feedback:
 
-CSS in particular also required much attention, given the importance of the layout of each cocktail card. Careful consideration was given to each font, font size, padding, margin, etc. Flexbox was especially helpful as we worked to fit as much information in the compact space as possible, without hurting readability.
-
-If you have any questions or comments, feel free to send me a message from my website. The link is on my Github homepage.
+Feedback is always welcome! I invite you to message me your comments and ideas using any of the social media listed within my profile.
