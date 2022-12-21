@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/static/v1?label=|&message=CSS3&color=a33550&style=plastic&logo=css3"/>
 <!--     <img src="https://img.shields.io/static/v1?label=|&message=SASS&color=2b625f&style=plastic&logo=sass"/> -->
 <!--     <img src="https://img.shields.io/static/v1?label=|&message=BOOTSTRAP&color=316c5e&style=plastic&logo=bootstrap"/> -->
-    <img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=35a34d&style=plastic&logo=javascript"/>
+    <img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=a33550d&style=plastic&logo=javascript"/>
     <img src="https://img.shields.io/static/v1?label=|&message=NODE.JS&color=35a34d&style=plastic&logo=node.js"/>
     <img src="https://img.shields.io/static/v1?label=|&message=EXPRESS&color=35a34d&style=plastic&logo=express"/>
     <img src="https://img.shields.io/static/v1?label=|&message=EJS&color=35a34d&style=plastic&logo=ejs"/>
@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-    <a target="_blank" href="https://beverlylounge.onrender.com/"><img width="25%" src="https://github.com/RobinHerzig/RobinHerzig/blob/main/images/goldengobletlounge.jpg"></a>
+    <a target="_blank" href="https://beverlylounge.onrender.com/"><img width="50%" src="https://github.com/RobinHerzig/RobinHerzig/blob/main/images/goldengobletlounge.jpg"></a>
     <br>
     <a align="center" target="_blank" href="https://beverlylounge.onrender.com/">Beverly Lounge</a>
 </p>
@@ -48,7 +48,7 @@ The bookmark icons save drink ID to localStorage. Cards that are bookmarked will
 
 Several errors were discovered in the cocktail database. Since I'm unable to fix these at the source, fixed them within EJS. The typical workflow for this involved splitting the strings into an array and correcting spacing or adding missing punctuation. While this fixed the majority of the issues, edge cases may still exist.
 
-Future iterations will include membership signups and connection to a MongoDB database. This will allow for two new featurs:
+Future iterations will include membership signups and connection to a MongoDB database. This will allow for two new features:
 1. User's can add new drinks.
 2. User's can save drinks and access them later.
 
