@@ -17,8 +17,17 @@
     <header class="homepageButton">
         <span><a href="https://beverlylounge.onrender.com/">Homepage</a></span>
     </header>
-    <section class="card error homepage">
+
+    <section class="card error homepage neon">
         <p>No results found! Please try another keyword.</p>
+        
+        <form action="/queryDrinks" method="POST" class="flexContainerRow">
+            <input autofocus type="text" placeholder="Enter a cocktail" name="ingredient" class="homepageInput" id="inputText">
+            <input type="submit" value="Search" class="homepageInput" id="inputSubmitQuery">
+            <input type="submit" value="Random" class="homepageInput" id="inputSubmitRandom" formaction="/queryRandom" formmethod="GET">
+            <!-- <input type="submit" value="Favorites" class="homepageInput" id="inputSubmitFavorites" formaction="/queryFavorites" formmethod="GET"> -->
+        </form>
+
     </section>
 
     <script src='js/main.js'></script>
